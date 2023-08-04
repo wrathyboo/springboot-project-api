@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wrathyboo_db
+    username: root
+    password: 1234$
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+application:
+  security:
+    jwt:
+      secret-key: 3846596f6350b2067d41412da02a43683d214e438505f2070dc01e2f45bce7f8
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+server:
+   port: 8080
+   error:
+       whitelabel:
+            enabled: false
